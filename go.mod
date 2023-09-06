@@ -1,4 +1,4 @@
-module github.com/gabe565/color-print
+module github.com/gabe565/print-xterm256-go
 
 go 1.20
 
