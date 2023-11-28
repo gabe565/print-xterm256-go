@@ -1,0 +1,6 @@
+.git/
+.github/
+.idea/
+.pre-commit-config.yaml
+README.md
+renovate.json
