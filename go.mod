@@ -1,6 +1,6 @@
 module github.com/gabe565/print-xterm256-go
 
-go 1.21
+go 1.21.4
 
 require github.com/charmbracelet/lipgloss v0.9.1
 
