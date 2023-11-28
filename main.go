@@ -5,9 +5,12 @@ import (
 	"strconv"
 
 	"github.com/charmbracelet/lipgloss"
+	"github.com/muesli/termenv"
 )
 
 func main() {
+	lipgloss.SetColorProfile(termenv.ANSI256)
+
 	style := lipgloss.NewStyle().Padding(0, 1).Foreground(lipgloss.Color("#fff"))
 
 	for i := 0; i < 256; i += 1 {
