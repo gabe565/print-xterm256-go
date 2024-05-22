@@ -22,17 +22,7 @@ RUN <<EOT
   go build -ldflags='-w -s' -trimpath -o print-xterm256
 EOT
 
-
-FROM alpine:3.19
+FROM gcr.io/distroless/static:nonroot
 WORKDIR /app
-
-ARG USERNAME=print-xterm256
-ARG UID=1000
-ARG GID=$UID
-RUN addgroup -g "$GID" "$USERNAME" \
-    && adduser -S -u "$UID" -G "$USERNAME" "$USERNAME"
-
-COPY --from=go-builder /app/print-xterm256 ./
-
-USER $UID
-CMD ["/app/print-xterm256"]
+COPY --from=go-builder /app/print-xterm256 /
+CMD ["/print-xterm256"]
