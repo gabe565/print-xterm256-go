@@ -23,7 +23,7 @@ RUN <<EOT
 EOT
 
 
-FROM alpine:3.19
+FROM alpine:3.20
 WORKDIR /app
 
 ARG USERNAME=print-xterm256
