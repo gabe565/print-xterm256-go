@@ -35,11 +35,8 @@ func main() {
 		str := fmt.Sprintf("%03d", i)
 		color := lipgloss.Color(strconv.Itoa(i))
 
-		bgStyle := style.Copy().Background(color)
-		fmt.Print(bgStyle.Render(str))
-
-		fgStyle := style.Copy().Foreground(color)
-		fmt.Print(fgStyle.Render(str))
+		fmt.Print(style.Background(color).Render(str))
+		fmt.Print(style.Foreground(color).Render(str))
 	}
 	fmt.Println()
 }
