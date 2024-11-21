@@ -18,9 +18,9 @@ func main() {
 		case i == 0:
 		case i <= 16:
 			switch {
-			case i%16 == 0:
+			case i == 16:
 				fmt.Print("\n\n")
-			case i%8 == 0:
+			case i == 8:
 				fmt.Println()
 			}
 		default:
