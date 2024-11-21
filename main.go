@@ -17,17 +17,17 @@ func main() {
 		switch {
 		case i == 0:
 		case i <= 16:
-			if i%8 == 0 {
-				fmt.Println()
-			}
-			if i%16 == 0 {
+			switch {
+			case i%16 == 0:
+				fmt.Print("\n\n")
+			case i%8 == 0:
 				fmt.Println()
 			}
 		default:
-			if (i-16)%6 == 0 {
-				fmt.Println()
-			}
-			if (i-16)%36 == 0 {
+			switch {
+			case (i-16)%36 == 0:
+				fmt.Print("\n\n")
+			case (i-16)%6 == 0:
 				fmt.Println()
 			}
 		}
@@ -35,8 +35,10 @@ func main() {
 		str := fmt.Sprintf("%03d", i)
 		color := lipgloss.Color(strconv.Itoa(i))
 
-		fmt.Print(style.Background(color).Render(str))
-		fmt.Print(style.Foreground(color).Render(str))
+		fmt.Print(
+			style.Background(color).Render(str),
+			style.Foreground(color).Render(str),
+		)
 	}
 	fmt.Println()
 }
