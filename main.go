@@ -14,21 +14,21 @@ func main() {
 	style := lipgloss.NewStyle().Padding(0, 1).Foreground(lipgloss.Color("#fff"))
 
 	for i := range 256 {
-		if i != 0 {
-			if i <= 16 {
-				if i%8 == 0 {
-					fmt.Println()
-				}
-				if i%16 == 0 {
-					fmt.Println()
-				}
-			} else {
-				if (i-16)%6 == 0 {
-					fmt.Println()
-				}
-				if (i-16)%36 == 0 {
-					fmt.Println()
-				}
+		switch {
+		case i == 0:
+		case i <= 16:
+			if i%8 == 0 {
+				fmt.Println()
+			}
+			if i%16 == 0 {
+				fmt.Println()
+			}
+		default:
+			if (i-16)%6 == 0 {
+				fmt.Println()
+			}
+			if (i-16)%36 == 0 {
+				fmt.Println()
 			}
 		}
 
