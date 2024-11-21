@@ -13,7 +13,7 @@ func main() {
 
 	style := lipgloss.NewStyle().Padding(0, 1).Foreground(lipgloss.Color("#fff"))
 
-	for i := 0; i < 256; i += 1 {
+	for i := range 256 {
 		if i != 0 {
 			if i <= 16 {
 				if i%8 == 0 {
