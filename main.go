@@ -15,12 +15,14 @@ func main() {
 	_, _ = io.WriteString(os.Stdout, Generate())
 }
 
+const bufCap = 20_000
+
 func Generate() string {
 	lipgloss.SetColorProfile(termenv.ANSI256)
 	style := lipgloss.NewStyle().Padding(0, 1).Foreground(lipgloss.Color("#fff"))
 
 	var buf strings.Builder
-	buf.Grow(20_000)
+	buf.Grow(bufCap)
 	for i := range int64(256) {
 		str := fmt.Sprintf("%03d", i)
 		color := lipgloss.Color(strconv.FormatInt(i, 10))
