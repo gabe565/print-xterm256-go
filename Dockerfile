@@ -1,6 +1,6 @@
 #syntax=docker/dockerfile:1
 
-FROM --platform=$BUILDPLATFORM golang:1.24.0-alpine AS go-builder
+FROM --platform=$BUILDPLATFORM golang:1.24.0-alpine AS builder
 WORKDIR /app
 
 COPY go.mod go.sum ./
@@ -22,7 +22,6 @@ RUN <<EOT
   go build -ldflags='-w -s' -trimpath -o print-xterm256
 EOT
 
-FROM gcr.io/distroless/static:nonroot
-WORKDIR /app
-COPY --from=go-builder /app/print-xterm256 /
-CMD ["/print-xterm256"]
+FROM scratch
+COPY --from=builder /app/print-xterm256 /
+ENTRYPOINT ["/print-xterm256"]
