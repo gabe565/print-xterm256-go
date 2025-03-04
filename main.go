@@ -12,8 +12,11 @@ import (
 )
 
 func main() {
-	lipgloss.SetColorProfile(termenv.ANSI256)
+	_, _ = io.WriteString(os.Stdout, Generate())
+}
 
+func Generate() string {
+	lipgloss.SetColorProfile(termenv.ANSI256)
 	style := lipgloss.NewStyle().Padding(0, 1).Foreground(lipgloss.Color("#fff"))
 
 	var buf strings.Builder
@@ -41,6 +44,5 @@ func main() {
 			}
 		}
 	}
-
-	_, _ = io.WriteString(os.Stdout, buf.String())
+	return buf.String()
 }
