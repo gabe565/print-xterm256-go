@@ -21,20 +21,19 @@ func main() {
 			style.Foreground(color).Render(str),
 		)
 
-		next := i + 1
 		switch {
-		case next <= 16:
+		case i <= 15:
 			switch {
-			case next == 16:
+			case i == 15:
 				fmt.Print("\n\n")
-			case next == 8:
+			case i == 7:
 				fmt.Println()
 			}
 		default:
 			switch {
-			case (next-16)%36 == 0:
+			case (i-15)%36 == 0:
 				fmt.Print("\n\n")
-			case (next-16)%6 == 0:
+			case (i-15)%6 == 0:
 				fmt.Println()
 			}
 		}
