@@ -19,7 +19,7 @@ const bufCap = 20_000
 
 func Generate() string {
 	lipgloss.SetColorProfile(termenv.ANSI256)
-	style := lipgloss.NewStyle().Padding(0, 1).Foreground(lipgloss.Color("#fff"))
+	style := lipgloss.NewStyle().Padding(0, 1).Foreground(lipgloss.Color("15"))
 
 	var buf strings.Builder
 	buf.Grow(bufCap)
