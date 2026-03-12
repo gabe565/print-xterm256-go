@@ -31,10 +31,10 @@ func Generate() string {
 
 		switch {
 		case i <= 15:
-			switch {
-			case i == 15:
+			switch i {
+			case 15:
 				buf.WriteString("\n\n")
-			case i == 7:
+			case 7:
 				buf.WriteByte('\n')
 			}
 		default:
