@@ -3,7 +3,7 @@ module github.com/gabe565/print-xterm256-go
 go 1.26.1
 
 require (
-	github.com/charmbracelet/lipgloss v1.0.0
+	github.com/charmbracelet/lipgloss/v2 v2.0.2
 	github.com/muesli/termenv v0.16.0
 )
 
