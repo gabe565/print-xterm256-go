@@ -7,8 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/charmbracelet/lipgloss"
-	"github.com/muesli/termenv"
+	"charm.land/lipgloss/v2"
 )
 
 func main() {
@@ -18,7 +17,6 @@ func main() {
 const bufCap = 20_000
 
 func Generate() string {
-	lipgloss.SetColorProfile(termenv.ANSI256)
 	style := lipgloss.NewStyle().Padding(0, 1).Foreground(lipgloss.Color("15"))
 
 	var buf strings.Builder
