@@ -1,6 +1,6 @@
 module github.com/gabe565/print-xterm256-go
 
-go 1.26.1
+go 1.26.2
 
 require charm.land/lipgloss/v2 v2.0.2
 
